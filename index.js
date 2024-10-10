@@ -1,12 +1,24 @@
 const express = require('express');
 const app = express();
 
-const PORT = 3000;
+require('dotenv').config()
+
+const mongoose = require('mongoose');
+
+
+const PORT = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
-    res.send('hello word')
+    res.send('hello word updated')
 })
 
-app.listen(PORT, () => {
-    console.log(`app is listning on PORT ${PORT}`)
-})
+mongoose.connect(process.env.MONGODB_URL)
+    .then(() => {
+        console.log('Database Connected!')
+
+        app.listen(PORT, () => {
+            console.log(`app is listning on PORT ${PORT}`)
+        })
+    }).catch((err) => {
+        console.log("error while connecting to DB ***: ", err)
+    });
