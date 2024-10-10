@@ -38,6 +38,25 @@ app.get('/api/product/:id', async (req, res) => {
     }
 })
 
+// api to update the prodcut by id
+app.put('/api/product/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+        const product = await Product.findByIdAndUpdate(id, req.body)
+
+        if (!product) {
+            res.status(404).json({ message: "Product not found!" })
+        }
+
+        const updatedProduct = await Product.findById(id);
+
+        res.status(200).json({ message: "Product updated successful", data: updatedProduct })
+
+    } catch (error) {
+        res.status(500).json({ message: error.message })
+    }
+})
+
 // api to add new product
 app.get('/api/product', async (req, res) => {
     try {
