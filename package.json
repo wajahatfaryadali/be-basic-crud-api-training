@@ -4,8 +4,12 @@
   "description": "to learn about basics of crud apis",
   "main": "index.js",
   "scripts": {
+    "dev": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "wajahatFaryadAli",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1"
+  }
 }
