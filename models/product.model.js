@@ -5,6 +5,7 @@ const ProductSchema = mongoose.Schema(
         name: {
             type: String,
             required: [true, 'Product Name is required!']
+            
         },
 
         quantity: {
@@ -31,7 +32,7 @@ const ProductSchema = mongoose.Schema(
         }
     },
     {
-        Timestamp: true
+        timestamps: true
     }
 )
 
