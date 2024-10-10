@@ -1,0 +1,11 @@
+{
+  "name": "be-basic-crud-api-training",
+  "version": "1.0.0",
+  "description": "to learn about basics of crud apis",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "wajahatFaryadAli",
+  "license": "ISC"
+}
